@@ -1,0 +1,40 @@
+<form method="post" action="">
+  <input type="hidden" name="lang" value="{{ lang }}"/>
+  <table>
+    <tr>
+      <td>
+	<select name="co_from" class="countries">
+	  <option value="">------</option>
+	  {% for country in chooser.countries %}
+	  <option value="{{ country.0 }}">{{ country.1 }}</option>
+	  {% endfor %}
+	</select>
+      </td>
+      <td>
+	<select name="co_to" class="countries">
+	  <option value="">------</option>
+	  {% for country in chooser.countries %}
+	  <option value="{{ country.0 }}">{{ country.1 }}</option>
+	  {% endfor %}
+	</select>
+      </td>
+      <td><input type="text" name="tr_amount"/></td>
+    </tr>
+    <tr>
+      <td>
+	<select name="ci_from" id="ci_from" class="cities">
+	  <option value="">------</option>
+	</select>
+      </td>
+      <td>
+	<select name="ci_to" id="ci_to" class="cities">
+	  <option value="">------</option>
+	</select>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="3"><button type="submit"></button></td>
+    </tr>
+  </table>
+</form>

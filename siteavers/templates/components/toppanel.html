@@ -1,0 +1,17 @@
+<div id="toppanel">
+  <div class="container_24">
+    <div class="grid_12 prefix_10">
+      <ul id="topmenu">
+      {% for item in topmenu %}
+      <li>
+	<a href="/{{ lang }}/{% if item.0 != '/' %}{{ item.0 }}/{% endif %}">	  
+	  {% if item.1.content %}{{ item.1.content }}{% else %}{{ item.1.nazva}}{% endif%}
+	</a>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+    {% include 'components/lswitcher.html' %}
+    <div class="clear"></div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{% extends 'layouts/layout0.html'%}
+{% block page%}
+{% include 'components/toppanel.html' %}
+{% include 'components/breadcrumbs.html' %}
+<div class="container_24">
+  <div class="grid_18"><h3>{{ pagetitle }}</h3></div>
+  <div class="clear"></div>
+  <div class="grid_18">{{ content_tekst|safe }}</div>
+</div>
+
+{% endblock page %}

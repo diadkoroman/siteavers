@@ -1,0 +1,24 @@
+<div id="wspaces">
+  <!--<ul id="wsp-switch-menu">
+    <li><a href="#listing">Список</a></li>
+    <li><a href="#map">Карта</a></li>
+  </ul>-->
+  
+  <div id="map">
+    <div  id="mapwr"></div>
+    <div class="clear"></div>
+  </div>
+
+
+  <div id="listing">
+    {% if listing %}
+    <ul>
+      {% for point in listing %}
+      <li><p><a href="{% url 'points.views.points_home_view' lang 'points' %}{{ point.countryid }}/{{ point.cityid }}/{{point.id}}/"><strong>{{ point.provider }}</strong>, {{ point.addr }}</a>, {{ point.wrk }}</p></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  
+</div>

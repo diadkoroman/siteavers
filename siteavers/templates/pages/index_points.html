@@ -1,0 +1,37 @@
+{% extends 'layouts/layout0.html'%}
+{% block page%}
+{% include 'components/toppanel.html' %}
+{% include 'components/breadcrumbs.html' %}
+<div class="container_24">
+  <div class="grid_24"><h3>{{ pagetitle }}</h3></div>
+  <div class="clear"></div>
+  <div class="grid_24">{% include 'components/chooser.html' %}</div>
+  <div class="clear"></div>
+  <div class="grid_24">
+    {% include 'components/wspace_switcher.html'%}
+  </div>
+</div>
+<script type="text/javascript">
+  ymaps.ready(initmap);
+  var PointsMap, myMark;
+  
+  function initmap(){
+      PointsMap = new ymaps.Map ("mapwr", {
+            center: [50.43,30.53], 
+            zoom: 9
+        });
+  PointsMap.behaviors.enable('scrollZoom')
+  PointsMap.controls.add('zoomControl', {right: '40px', top: '5px'})
+
+  myMark = new ymaps.Placemark([50.443145,30.413874],{hintContent:'Мій дім',balloonContent:'Тут я живу'});
+  PointsMap.geoObjects.add(myMark);
+  
+  {% for item in formap %}
+  point = new ymaps.Placemark([{{item.latitude}},{{item.longitude}}],{hintContent:'{{ item.hintc}}',balloonContent:'{{item.provider}}'});
+  PointsMap.geoObjects.add(point);
+  {% endfor %}
+  
+  }
+
+</script>
+{% endblock page %}

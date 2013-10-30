@@ -1,0 +1,12 @@
+*{font-family:Arial,Droid Sans,sans-serif; font-size:14px; color:#454545;}
+input[type='text'], input[type='password'], select{padding:3px; border:solid 1px #dddddd;}
+#toppanel{height:40px;background-color:#232323;line-height:40px;}
+#topmenu{margin:0;padding:0;}
+#topmenu li{list-style-type:none; display:inline-block; height:inherit; padding:0 10px;}
+#topmenu li a{color:#dddddd;text-decoration:none;}
+#lswitcher{background-color:transparent; padding:1px; border:solid 1px #444444; color:#dddddd;}
+#lswitcher option{background:#ffffff;}
+
+.bcr-a{font-size:0.8em;color:#B80000;}
+.countries, .cities{width:250px;}
+#mapwr{height:380px;}

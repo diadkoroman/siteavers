@@ -1,0 +1,8 @@
+<div class="grid_2">
+  <select onchange="document.location = this.value" id="lswitcher">
+    {% for item in lsw %}
+    <option{% if item.0 == lang %} selected="selected"{% endif %}
+    value="/{{ item.0 }}{% if item.1 != '' %}{{ item.1 }}{% else %}/{% endif %}">{{ item.0 }}</option>
+    {% endfor %}
+  </select>
+</div>
